@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Texto</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Tsukimi+Rounded&display=swap" rel="stylesheet">
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/fb42e4db5a.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header class="header">
+        <img class="header-logo" src="imagenes/Logo.png" alt="Logo de Alura">
+        <h1 class="header-titulo ocultar">Alura I Oracle</h1>
+    </header>
+
+    <main class="container">
+
+        <div class="grid">
+
+            <div class="funciones">
+
+                <textarea id="funciones-entrada" class="funciones-entrada"
+                    placeholder="Ingrese el texto aqui"></textarea>
+
+                <div class="funciones-alerta">
+                    <i class="fa-solid fa-circle-exclamation" id="funciones-icono" style="color: #474747;"></i>
+                    <p id="funciones-letra">Solo letras minúsculas y sin acentos</p>
+                </div>
+                <div class="funciones-botones">
+                    <button onclick="encriptar(); mostrar();  validar()" class="btn-encriptar">Encriptar!</button>
+
+                    <button onclick="desencriptar(); validar();mostrar()" class="btn-desencriptar">Desencriptar
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="funciones-salida">
+                <div id="funciones-imagen" class="funciones-imagen">
+                    <img class="imagen-muneco" src="imagenes/Muñeco.png" alt="">
+                    <h2>Ningún mensaje fue encontrado</h2>
+                    <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                </div>
+
+                <div id="funciones-mensaje" class="funciones-mensaje">
+                    <textarea class="salida" id="salida"></textarea>
+                    <button class="btn-copiar" onclick="copiar()">
+                        Copiar
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

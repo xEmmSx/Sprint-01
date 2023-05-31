@@ -1,0 +1,210 @@
+:root {
+  --fondo: #f3f5fc;
+  --primario: #0a3871;
+  --secundario: #495057;
+  --blanco: #ffffff;
+
+  --fuentePrincipal: "Inter", sans-serif;
+  --fuenteTitulo: "Tsukimi Rounded", sans-serif;
+}
+
+body {
+  background-color: var(--fondo);
+  font-family: var(--fuentePrincipal);
+  margin: 2% 2% 0 0;
+  /* width: 100%; */
+}
+
+/* CSS pra el Header */
+.header {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-logo {
+  transition: 400ms;
+}
+
+.header-logo:hover {
+  transform: rotate(1turn);
+  content: url(../imagenes/LogoOracle.png);
+}
+
+.header-titulo {
+  font-family: var(--fuenteTitulo);
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* CSS para separa la pantalla en dos partes */
+.grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 5%;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .ocultar {
+    display: none;
+  }
+  .header {
+    justify-content: center;
+  }
+}
+
+/* Css para las fnciones del encriptador */
+.funciones {
+  display: flex;
+  flex-direction: column;
+  margin: 3% 0 0 11%;
+}
+
+@media (max-width: 768px) {
+  .funciones {
+    margin: 10% 5% 0 5%;
+  }
+}
+
+.funciones-entrada {
+  background: var(--fondo);
+  color: var(--primario);
+  font-family: var(--fuentePrincipal);
+  font-size: 28px;
+  border: none;
+  min-height: 70vh;
+}
+
+.funciones-entrada::placeholder {
+  color: var(--primario);
+}
+
+.funciones-entrada:focus,
+.salida:focus {
+  outline: none;
+}
+/* @media (max-width: 768px) {
+  .funciones-entrada {
+  }
+} */
+
+/* CSS para la alerta */
+.funciones-alerta {
+  display: flex;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 5px;
+}
+
+.funciones-alerta p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--secundario);
+}
+
+@media (max-width: 768px) {
+  .funciones-alerta p {
+    font-size: 16px;
+  }
+}
+/* CSS para los botones de encriptar y desencriptar */
+
+.funciones-botones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 24px;
+}
+.btn-encriptar,
+.btn-desencriptar {
+  background: var(--blanco);
+  color: var(--primario);
+  border: 1px solid var(--primario);
+  height: 40px;
+  border-radius: 24px;
+  transition: 300ms;
+  font-size: 16px;
+  font-weight: bold;
+}
+.btn-encriptar:active,
+.btn-desencriptar:active {
+  position: relative;
+  top: 3px;
+}
+
+.btn-encriptar:hover,
+.btn-desencriptar:hover {
+  color: var(--blanco);
+  box-shadow: inset -20em 0 0 0 var(--primario),
+    inset 20em 0 0 0 var(--primario);
+}
+
+/* CSS para desencriptador */
+
+.funciones-salida {
+  display: flex;
+  flex-direction: column;
+  background: var(--blanco);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 32px;
+  align-items: center;
+  text-align: center;
+}
+
+.funciones-imagen {
+  margin: 50% 10%;
+}
+.imagen-muneco {
+  width: 70%;
+}
+.funciones-imagen h2 {
+  color: var(--secundario);
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.funciones-imagen p {
+  font-size: 16px;
+}
+@media (max-width: 768px) {
+  .funciones-salida {
+    margin: 0 5% 0 5%;
+  }
+  .funciones-imagen {
+    margin: 10% 10%;
+  }
+}
+
+.salida {
+  background: var(--blanco);
+  color: var(--secundario);
+  font-family: var(--fuentePrincipal);
+  font-size: 24px;
+  border: none;
+  min-height: 69vh;
+  margin: 10% 0;
+  width: 100%;
+}
+
+.btn-copiar {
+  background: var(--blanco);
+  color: var(--primario);
+  border: 1px solid var(--primario);
+  width: 80%;
+  height: 40px;
+  border-radius: 24px;
+  transition: 300ms;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .salida {
+    margin: 5% 5%;
+  }
+  .imagen-muneco {
+    display: none;
+  }
+}
