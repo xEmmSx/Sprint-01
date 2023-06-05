@@ -1,124 +1,108 @@
+/* CSS para las los colores y fuente */
 :root {
   --fondo: #f3f5fc;
   --primario: #0a3871;
   --secundario: #495057;
   --blanco: #ffffff;
+  --negro: #000000;
 
   --fuentePrincipal: "Inter", sans-serif;
-  --fuenteTitulo: "Tsukimi Rounded", sans-serif;
 }
 
+/* CSS para el body */
 body {
   background-color: var(--fondo);
   font-family: var(--fuentePrincipal);
-  margin: 2% 2% 0 0;
-  /* width: 100%; */
 }
 
-/* CSS pra el Header */
-.header {
+/* CSS para el grid del contenedor */
+.container {
+  height: 700px;
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 5%;
+  padding: 3% 2% 0 3%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: 933px;
+    gap: 1%;
+  }
+}
+.form-grid {
+  display: grid;
+  grid-template-rows: 1fr 10fr;
+}
+/* CSS para la animacion del logo */
+.logo {
   display: flex;
-  flex-direction: row;
 }
-
-.header-logo {
+.logo img {
   transition: 400ms;
 }
 
-.header-logo:hover {
+.logo img:hover {
   transform: rotate(1turn);
   content: url(../imagenes/LogoOracle.png);
 }
 
-.header-titulo {
-  font-family: var(--fuenteTitulo);
-  font-size: 40px;
-  font-weight: bold;
-}
-
-/* CSS para separa la pantalla en dos partes */
-.grid {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 5%;
-}
-
+/* media query para el responsive de las columnas y alinear el logo*/
 @media (max-width: 768px) {
-  .grid {
+  .container {
+    padding: 3% 3%;
     grid-template-columns: 1fr;
   }
-  .ocultar {
-    display: none;
-  }
-  .header {
+  .logo {
     justify-content: center;
   }
 }
 
-/* Css para las fnciones del encriptador */
-.funciones {
+/* Css para las funciones del encriptador */
+.input {
   display: flex;
   flex-direction: column;
-  margin: 3% 0 0 11%;
+  padding: 5% 0 0 20%;
+  gap: 10px;
 }
 
+/* media query para el responsive del encriptador */
 @media (max-width: 768px) {
-  .funciones {
-    margin: 10% 5% 0 5%;
+  .input {
+    padding: 10% 5% 0 5%;
   }
 }
 
-.funciones-entrada {
+/* CSS para el text area del encriptador */
+.input-text {
   background: var(--fondo);
   color: var(--primario);
   font-family: var(--fuentePrincipal);
   font-size: 28px;
   border: none;
-  min-height: 70vh;
+  height: 83%;
+  /* min-height: 55%; */
 }
-
-.funciones-entrada::placeholder {
+/*  65vh 77.5vh */
+.input-text::placeholder {
   color: var(--primario);
 }
 
-.funciones-entrada:focus,
-.salida:focus {
+/* CSS para quitar el la linea al seleccionar el text area del encriptador y desencriptador */
+.input-text:focus,
+.output-text:focus {
   outline: none;
 }
-/* @media (max-width: 768px) {
-  .funciones-entrada {
-  }
-} */
 
-/* CSS para la alerta */
-.funciones-alerta {
-  display: flex;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  margin-bottom: 1rem;
-  gap: 5px;
-}
-
-.funciones-alerta p {
-  margin: 0;
-  font-size: 1.2rem;
-  color: var(--secundario);
-}
-
-@media (max-width: 768px) {
-  .funciones-alerta p {
-    font-size: 16px;
-  }
-}
 /* CSS para los botones de encriptar y desencriptar */
 
-.funciones-botones {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 24px;
+.buttons {
+  display: flex;
+  gap: 5%;
 }
-.btn-encriptar,
-.btn-desencriptar {
+
+.btn {
+  width: 100%;
   background: var(--blanco);
   color: var(--primario);
   border: 1px solid var(--primario);
@@ -128,83 +112,96 @@ body {
   font-size: 16px;
   font-weight: bold;
 }
-.btn-encriptar:active,
-.btn-desencriptar:active {
+.btn:active {
   position: relative;
   top: 3px;
 }
 
-.btn-encriptar:hover,
-.btn-desencriptar:hover {
+.btn:hover {
   color: var(--blanco);
   box-shadow: inset -20em 0 0 0 var(--primario),
     inset 20em 0 0 0 var(--primario);
 }
 
 /* CSS para desencriptador */
-
-.funciones-salida {
-  display: flex;
-  flex-direction: column;
+.output {
+  display: grid;
   background: var(--blanco);
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 32px;
   align-items: center;
   text-align: center;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
-.funciones-imagen {
+.output-img {
   margin: 50% 10%;
 }
-.imagen-muneco {
+.img-munheco {
   width: 70%;
 }
-.funciones-imagen h2 {
+.output-img p:nth-child(2) {
   color: var(--secundario);
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 20px;
 }
-.funciones-imagen p {
+
+.output-img p {
   font-size: 16px;
 }
+
+/* media query para el responsive del desencriptador */
 @media (max-width: 768px) {
-  .funciones-salida {
-    margin: 0 5% 0 5%;
-  }
-  .funciones-imagen {
+  .output-img {
     margin: 10% 10%;
   }
 }
 
-.salida {
-  background: var(--blanco);
+.output-msg {
+  margin: 7% 5%;
+}
+.output-text {
+  width: 100%;
   color: var(--secundario);
   font-family: var(--fuentePrincipal);
   font-size: 24px;
   border: none;
-  min-height: 69vh;
-  margin: 10% 0;
-  width: 100%;
-}
-
-.btn-copiar {
-  background: var(--blanco);
-  color: var(--primario);
-  border: 1px solid var(--primario);
-  width: 80%;
-  height: 40px;
-  border-radius: 24px;
-  transition: 300ms;
-  font-size: 16px;
-  font-weight: bold;
+  height: 600px;
 }
 
 @media (max-width: 768px) {
-  .salida {
+  .output-img {
     margin: 5% 5%;
+    /* height: 350px; */
   }
-  .imagen-muneco {
+  .output-text {
+    height: 300px;
+  }
+  .img-munheco {
     display: none;
   }
+}
+
+.footer {
+  margin-top: 50px;
+  /* display: grid; */
+  /* grid-template-columns: 1fr; */
+  display: flex;
+  flex-direction: column;
+  padding: 2% 0;
+  text-align: center;
+  /* width: 100%; */
+  background-color: var(--negro);
+}
+
+.footer-social {
+  color: var(--secundario);
+  font-size: 15px;
+  margin: 1.5% 0;
+}
+.footer-social a {
+  text-decoration: none;
+}
+.footer-copyright {
+  color: var(--secundario);
 }

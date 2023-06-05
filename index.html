@@ -17,50 +17,52 @@
 </head>
 
 <body>
-    <header class="header">
-        <img class="header-logo" src="imagenes/Logo.png" alt="Logo de Alura">
-        <h1 class="header-titulo ocultar">Alura I Oracle</h1>
-    </header>
-
     <main class="container">
+        <section class="form-grid">
+            <div class="logo">
+                <img src="imagenes/Logo.png" alt="Logo de Alura">
+            </div>
+            <form class="input">
+                <textarea id="input-text" class="input-text" placeholder="Ingrese el texto aqui"></textarea>
 
-        <div class="grid">
-
-            <div class="funciones">
-
-                <textarea id="funciones-entrada" class="funciones-entrada"
-                    placeholder="Ingrese el texto aqui"></textarea>
-
-                <div class="funciones-alerta">
-                    <i class="fa-solid fa-circle-exclamation" id="funciones-icono" style="color: #474747;"></i>
-                    <p id="funciones-letra">Solo letras minúsculas y sin acentos</p>
-                </div>
-                <div class="funciones-botones">
-                    <button onclick="encriptar(); mostrar();  validar()" class="btn-encriptar">Encriptar!</button>
-
-                    <button onclick="desencriptar(); validar();mostrar()" class="btn-desencriptar">Desencriptar
-                    </button>
+                <div class="alert">
+                    <i class="fa-solid fa-circle-exclamation" id="alert-icon" style="color: #474747;"></i>
+                    <label for="input-text" id="alert-text">Solo letras minúsculas y sin acentos</label>
                 </div>
 
+                <div class="buttons">
+                    <input type="button" onclick="encriptar(); mostrar();  validar()" class="btn" value="Encriptar!">
+                    <input type="button" onclick="desencriptar(); validar();mostrar()" class="btn" value="Desencriptar">
+                </div>
+            </form>
+        </section>
+        <div class="output">
+            <div id="output-img" class="output-img">
+                <img class="img-munheco" src="imagenes/Muñeco.png" alt="">
+                <p>Ningún mensaje fue encontrado</p>
+                <p>Ingresa el texto que desees encriptar o desencriptar.</p>
             </div>
 
-            <div class="funciones-salida">
-                <div id="funciones-imagen" class="funciones-imagen">
-                    <img class="imagen-muneco" src="imagenes/Muñeco.png" alt="">
-                    <h2>Ningún mensaje fue encontrado</h2>
-                    <p>Ingresa el texto que desees encriptar o desencriptar.</p>
-                </div>
-
-                <div id="funciones-mensaje" class="funciones-mensaje">
-                    <textarea class="salida" id="salida"></textarea>
-                    <button class="btn-copiar" onclick="copiar()">
-                        Copiar
-                    </button>
-                </div>
-
+            <div class="output-msg" id="output-msg">
+                <textarea class="output-text" id="output-text"></textarea>
+                <button class="btn" onclick="copiar()">
+                    Copiar
+                </button>
             </div>
         </div>
     </main>
+    <footer class="footer">
+        <div class="footer-social">
+            <a href="#" class="fa-brands fa-facebook fa-2xl" style="color: #495057;"></a>
+            <a href="#" class="fa-brands fa-instagram fa-2xl" style="color: #495057;"></a>
+            <a href="#" class="fa-brands fa-youtube fa-2xl" style="color: #495057;"></a>
+            <a href="https://www.linkedin.com/in/emmanuel-rueda-garcia-8a935916a/" class="fa-brands fa-linkedin fa-2xl"
+                style="color: #495057;"></a>
+        </div>
+        <div class="footer-copyright">
+            &copy 2023 Copyright Emmanuel Rueda Garcia I All rights reserved
+        </div>
+    </footer>
 </body>
 
 </html>
